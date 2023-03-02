@@ -22,7 +22,5 @@ cd ../api-ts-node
 docker-compose up -d
 ```
 ```sh
-docker-compose up -d
-``````sh
 cd .. && docker-compose up -d
 ```
