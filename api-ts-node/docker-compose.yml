@@ -1,6 +1,14 @@
 version: '3'
 
 services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    command: "npm run dev"
+    networks:
+      - postgres
+
   postgres:
     image: postgres
     environment:
