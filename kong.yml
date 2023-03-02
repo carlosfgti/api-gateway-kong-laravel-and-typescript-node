@@ -1,0 +1,22 @@
+_format_version: "2.1"
+
+services:
+  - name: app-laravel
+    url: http://host.docker.internal:8989
+    routes:
+      - name: laravel-route
+        paths:
+          - /laravel
+  - name: app-ts-node
+    url: http://host.docker.internal:8080
+    routes:
+      - name: ts-route
+        paths:
+          - /
+
+plugins:
+  - name: rate-limiting
+    service: app-ts-node
+    config:
+      minute: 5
+      policy: local
